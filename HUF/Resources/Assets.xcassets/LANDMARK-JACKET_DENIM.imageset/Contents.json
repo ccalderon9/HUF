@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "LANDMARK-JACKET_DENIM.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

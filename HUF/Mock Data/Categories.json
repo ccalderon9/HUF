@@ -1,0 +1,73 @@
+    [
+        {
+            "id": 0,
+            "name": "Clothing",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "T-Shirts",
+                    "products": []
+                },
+                {
+                    "id": 1,
+                    "name": "Hoodies & Fleece",
+                    "products": []
+                },
+                {
+                    "id": 2,
+                    "name": "Tops",
+                    "products": []
+                },
+                {
+                    "id": 3,
+                    "name": "Bottoms",
+                    "products": []
+                },
+                {
+                    "id": 4,
+                    "name": "Jackets",
+                    "products": [
+                        {
+                            "id": 0,
+                            "name": "Corduroy Trucker Jacket",
+                            "price": "$125",
+                            "colors": ["DustyRose", "HufGreen", "Navy"],
+                            "images": [
+                                "CORDUROY-TRUCKER-JACKET_DUSTY-ROSE",
+                                "CORDUROY-TRUCKER-JACKET_DUSTY-ROSE-back",
+                                "CORDUROY-TRUCKER-JACKET_DUSTY-ROSE-detail",
+                                "CORDUROY-TRUCKER-JACKET_DUSTY-ROSE-model-close-up",
+                                "CORDUROY-TRUCKER-JACKET_DUSTY-ROSE-model",
+                                "CORDUROY-TRUCKER-JACKET_DUSTY-ROSE-model-female"
+                            ],
+                            "sizes": [
+                                "X-Small", "Small", "Medium", "Large"
+                            ],
+                            "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+                            "description": "• 100% cotton (8oz) 8 wale corduroy trucker jacket\n• Full-zip front closure\n• Left chest patch pocket with zip closure\n• Dual front patch hand pockets\n• HUF woven flag label at front left pocket"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "Hats",
+                    "products": []
+                },
+                {
+                    "id": 6,
+                    "name": "Socks",
+                    "products": []
+                },
+                {
+                    "id": 7,
+                    "name": "All Clothing",
+                    "products": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Accessories",
+            "subcategories": []
+        },
+    ]
