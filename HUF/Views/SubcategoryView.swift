@@ -33,16 +33,18 @@ struct SubcategoryView: View {
                             navigationRouter.navigateToProductDetail(product.id)
                         } label: {
                             VStack(spacing: 0) {
-                                Rectangle()
-                                    .fill(.green)
+                                Image(product.images.first!)
+                                    .resizable()
                                     .frame(width: calculateDimensions(), height: calculateDimensions())
+                                    .background(Color.grayBackground)
+                                    .clipShape(RoundedRectangle(cornerRadius: 32))
                                     .padding(.bottom, 16)
                                 
                                 if !product.colors.isEmpty {
                                     HStack {
                                         ForEach(product.colors, id: \.hashValue) { color in
                                             Rectangle()
-                                                .fill(.green)
+                                                .fill(Color(color))
                                                 .frame(width: 16, height: 16)
                                         }
                                     }
@@ -50,12 +52,15 @@ struct SubcategoryView: View {
                                 }
                                 
                                 Text(product.name)
-                                    .font(.callout)
+                                    .font(.custom(Font.overpassLight, size: 16))
+                                    .kerning(1)
                                     .foregroundColor(.black)
                                     .frame(width: calculateDimensions())
+                                    .padding(.bottom, 8)
                                 
                                 Text(product.price)
-                                    .font(.subheadline)
+                                    .font(.custom(Font.overpassRegular, size: 16))
+                                    .kerning(1)
                                     .foregroundColor(.black)
                                 
                                 Spacer()

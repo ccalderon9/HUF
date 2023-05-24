@@ -9,9 +9,11 @@ import SwiftUI
 
 extension Color {
     
-    static let dustyRose = Color("DustyRose")
-    static let hufGreen = Color("HufGreen")
-    static let navy = Color("Navy")
-    static let gold = Color("Gold")
-    
+    static let darkHuf = Color("darkHuf")
+    static let dustyRose = Color("dustyRose")
+    static let hufGreen = Color("hufGreen")
+    static let navy = Color("navy")
+    static let gold = Color("gold")
+    static let grayBackground = Color("grayBackground")
+    static let logoGreen = Color("logoGreen")
 }

@@ -16,7 +16,7 @@ class ProductDetailViewModel: ObservableObject {
     
     @Published var selectedPhotoIndex: Int = 0
     @Published var selectedSize: String = "Select Size"
-    @Published var selectedColor: String = "Gold"
+    @Published var selectedColor: String = "Dusty Rose"
     
     let disposableBag = DisposableBag()
     

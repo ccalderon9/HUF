@@ -18,6 +18,7 @@ struct Subcategory: Decodable, Equatable, Hashable, Identifiable {
     
     var id: Int = 0
     var name: String = ""
+    var image: String = ""
     var products: [Product] = []
 }
 

@@ -39,10 +39,10 @@ struct TabsView: View {
                 .tag(Tab.bag)
                 .environmentObject(navigationRouter)
             
-            ProfileView()
-                .tabItem(imageName: "person", title: "Profile")
-                .tag(Tab.home)
-                .environmentObject(navigationRouter)
+//            ProfileView()
+//                .tabItem(imageName: "person", title: "Profile")
+//                .tag(Tab.home)
+//                .environmentObject(navigationRouter)
         }
     }
 }

@@ -15,6 +15,8 @@ struct ProductDetailView: View {
     
     let colors: [Color] = [Color.green, Color.brown, Color.yellow]
     
+    let topPickProducts: [Product] = MockDataService().categories[0].subcategories[4].products
+    
     let columns = [
         GridItem(.flexible(), spacing: 4),
         GridItem(.flexible(), spacing: 4),
@@ -31,9 +33,10 @@ struct ProductDetailView: View {
         ScrollView {
             VStack(spacing: 0) {
                 TabView {
-                    ForEach(colors, id: \.hashValue) { color in
-                        Rectangle()
-                            .foregroundColor(color)
+                    ForEach(viewModel.product.images, id: \.hashValue) { image in
+                        Image(image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(height: 390)
                     }
                 }
@@ -79,7 +82,7 @@ struct ProductDetailView: View {
                         HStack {
                             ForEach(viewModel.product.colors, id: \.hashValue) { color in
                                 Rectangle()
-                                    .fill(.green)
+                                    .fill(Color(color))
                                     .frame(width: 64, height: 64)
                             }
                             
@@ -157,11 +160,30 @@ struct ProductDetailView: View {
                     
                     ScrollView(.horizontal, showsIndicators: true) {
                         HStack(spacing: 16) {
-                            ForEach(colors, id: \.hashValue) { color in
-                                RoundedRectangle(cornerRadius: 16)
-                                    .foregroundColor(color)
-                                    .frame(width: 250, height: 250)
+                            ForEach(topPickProducts, id: \.hashValue) { product in
+                                VStack(spacing: 0) {
+                                    
+                                    Image(product.images.first!)
+                                        .resizable()
+                                        .frame(width: 250, height: 250)
+                                        .background(Color.grayBackground)
+                                        .clipShape(RoundedRectangle(cornerRadius: 32))
+                                        .padding(.bottom, 12)
+                                    
+                                    Text(product.name)
+                                        .font(.callout)
+                                        .foregroundColor(.black)
+                                    
+                                    Text(product.price)
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                    
+                                    Rectangle()
+                                        .fill(.clear)
+                                        .frame(height: 100)
+                                }
                             }
+                            .padding(.leading, 16)
                         }
                     }
                 }

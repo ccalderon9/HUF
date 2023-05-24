@@ -15,27 +15,32 @@ class MockDataService {
         return [
             Category(
                 id: 0,
-                name: "Clothing",
+                name: "CLOTHING",
                 subcategories: [
                     Subcategory(
                         id: 0,
-                        name: "T-Shirts",
+                        name: "T-SHIRTS",
+                        image: "hats",
                         products: []),
                     Subcategory(
                         id: 1,
-                        name: "Hoodies & Fleece",
+                        name: "HOODIES & FLEECES",
+                        image: "jackets",
                         products: []),
                     Subcategory(
                         id: 2,
-                        name: "Tops",
+                        name: "TOPS",
+                        image: "socks",
                         products: []),
                     Subcategory(
                         id: 3,
-                        name: "Bottoms",
+                        name: "BOTTOMS",
+                        image: "bottoms",
                         products: []),
                     Subcategory(
                         id: 4,
-                        name: "Jackets",
+                        name: "JACKETS",
+                        image: "jackets",
                         products: [
                             Product(
                                 id: 0,
@@ -105,28 +110,31 @@ class MockDataService {
                                 """)]),
                     Subcategory(
                         id: 5,
-                        name: "Hats",
+                        name: "HATS",
+                        image: "hats",
                         products: []),
                     Subcategory(
                         id: 6,
-                        name: "Socks",
+                        name: "SOCKS",
+                        image: "socks",
                         products: []),
                     Subcategory(
                         id: 7,
-                        name: "All Clothing",
+                        name: "ALL CLOTHING",
+                        image: "allclothing",
                         products: []),
                 ]),
             Category(
                 id: 1,
-                name: "Accessories",
+                name: "ACCESSORIES",
                 subcategories: []),
             Category(
                 id: 2,
-                name: "Collections",
+                name: "COLLECTIONS",
                 subcategories: []),
             Category(
                 id: 3,
-                name: "Collaborations",
+                name: "COLLABORATIONS",
                 subcategories: [])
         ]
     }

@@ -9,70 +9,147 @@ import SwiftUI
 
 struct HomeView: View {
     
-    let colors: [Color] = [Color.green, Color.brown, Color.yellow]
+    @EnvironmentObject var navigationRouter: NavigationRouter
+    
+    let campaigns: [String] = ["campaign2", "campaign3", "campaign1"]
+    let topPickProducts: [Product] = MockDataService().categories[0].subcategories[4].products
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                HStack {
-                    Spacer()
-                    Image(systemName: "magnifyingglass")
-                }
-                .padding(16)
-                
-                Text("FREE US DELIVERY ON ORDERS $75+")
-                    .frame(idealWidth: .infinity, maxWidth: .infinity, minHeight: 48)
-                    .background(.gray)
-                
-                ZStack {
-                    TabView {
-                        ForEach(colors, id: \.hashValue) { color in
+        NavigationStack(path: $navigationRouter.path) {
+            ScrollView {
+                VStack(spacing: 0) {
+                    HStack(spacing: 0) {
+                        ZStack {
                             Rectangle()
-                                .foregroundColor(color)
-                                .frame(height: 450)
+                                .fill(Color.logoGreen)
+                                .frame(width: 48, height: 48)
+                            Text("HUF")
+                                .foregroundColor(.white)
+                                .font(.custom(Font.overpassBold, size: 17))
+                                .kerning(3)
                         }
-                    }
-                    .tabViewStyle(.page(indexDisplayMode: .always))
-                    
-                    VStack {
-                        Spacer()
                         
-                        HStack {
-                            Button {
-                                
-                            } label: {
-                                Text("Shop")
-                            }
-                            .buttonStyle(PrimaryButtonStyle())
-                            .frame(width: 114)
-                            .padding(.bottom, 60)
-                            
-                            Spacer()
-                        }
-                        .padding(.horizontal, 16)
+                        Text("FREE US DELIVERY ON ORDERS $75+")
+                            .font(.custom(Font.overpassBold, size: 17))
+                            .frame(idealWidth: .infinity, maxWidth: .infinity, minHeight: 48)
+                            .background(.black)
+                            .foregroundColor(.white)
                     }
-                }
-                .frame(height: 450)
-                .padding(.bottom, 40)
-                
-                HStack {
-                    Text("Top Picks for you")
-                        .font(.title3)
+                    
+                    ZStack {
+                        TabView {
+                            ForEach(campaigns, id: \.hashValue) { campaign in
+                                ZStack {
+                                    Image(campaign)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(height: 500)
+                                    
+                                    VStack {
+                                        Text("SUMMER 23")
+                                            .font(.custom(Font.overpassBold, size: 30))
+                                            .foregroundColor(.white)
+                                        
+                                        Text("AVAILABLE NOW")
+                                            .font(.custom(Font.overpassRegular, size: 16))
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                            }
+                        }
+                        .tabViewStyle(.page(indexDisplayMode: .always))
+                        
+                        VStack {
+                            Spacer()
+                            
+                            HStack {
+                                Button {
+                                    navigationRouter.navigateToSubcategory(0)
+                                } label: {
+                                    Text("SHOP")
+                                        .font(.custom(Font.overpassBold, size: 20))
+                                }
+                                .foregroundColor(.white)
+                                .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                                .background(Color.black)
+                                .clipShape(Capsule())
+                                .padding(.bottom, 60)
+                                
+                                Spacer()
+                            }
+                            .padding(.horizontal, 16)
+                        }
+                    }
+                    .frame(height: 500)
+                    .padding(.bottom, 40)
+                    
+                    HStack {
+                        Text("Top Picks for You")
+                            .font(.custom(Font.overpassRegular, size: 24))
+                        Spacer()
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 16)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 16) {
+                            ForEach(topPickProducts, id: \.hashValue) { product in
+                                Button {
+                                    navigationRouter.navigateToProductDetail(product.id)
+                                } label: {
+                                    VStack(spacing: 0) {
+                                        Image(product.images.first!)
+                                            .resizable()
+                                            .frame(width: 250, height: 250)
+                                            .background(Color.grayBackground)
+                                            .clipShape(RoundedRectangle(cornerRadius: 32))
+                                            .padding(.bottom, 12)
+                                        
+                                        Text(product.name)
+                                            .font(.custom(Font.overpassRegular, size: 16))
+                                            .kerning(1)
+                                            .foregroundColor(.black)
+                                            .padding(.bottom, 8)
+                                        
+                                        Text(product.price)
+                                            .font(.custom(Font.overpassRegular, size: 16))
+                                            .kerning(1)
+                                            .foregroundColor(.gray)
+                                        
+                                        Rectangle()
+                                            .fill(.clear)
+                                            .frame(height: 100)
+                                    }
+                                }
+                            }
+                            .padding(.leading, 16)
+                        }
+                    }
+                    
                     Spacer()
                 }
-                .padding(.horizontal, 16)
                 .padding(.bottom, 16)
                 
-                ScrollView(.horizontal, showsIndicators: true) {
-                    HStack(spacing: 16) {
-                        ForEach(colors, id: \.hashValue) { color in
-                            RoundedRectangle(cornerRadius: 16)
-                                .foregroundColor(color)
-                                .frame(width: 250, height: 250)
-                        }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        // present search
+                    } label: {
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .foregroundColor(Color.gray)
+                            .frame(width: 26, height: 26)
                     }
                 }
-                .padding(.leading, 16)
+            }
+            .navigationDestination(for: NavigationRouter.Route.self) { route in
+                switch route {
+                case .productDetail(let id):
+                    ProductDetailView(productId: id)
+                case .subcategory(let id):
+                    SubcategoryView(subcategoryId: id)
+                }
             }
         }
     }
@@ -82,5 +159,6 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .previewDevice("iPhone 14 Pro Max")
+            .environmentObject(NavigationRouter())
     }
 }

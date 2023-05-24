@@ -18,6 +18,11 @@
 		CB0E878E29D2AE93006089AD /* Color+Huf.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E878D29D2AE93006089AD /* Color+Huf.swift */; };
 		CB0E879029D2B73C006089AD /* SubcategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E878F29D2B73C006089AD /* SubcategoryViewModel.swift */; };
 		CB0E879229D3F51B006089AD /* Subcategory.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0E879129D3F51B006089AD /* Subcategory.json */; };
+		CB7FC91C2A1DBE550010B8AA /* Overpass-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB7FC91B2A1DBE550010B8AA /* Overpass-Bold.ttf */; };
+		CB7FC91F2A1DBF3B0010B8AA /* Font+Huf.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7FC91E2A1DBF3B0010B8AA /* Font+Huf.swift */; };
+		CB7FC9212A1DC5770010B8AA /* Overpass-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB7FC9202A1DC5770010B8AA /* Overpass-Regular.ttf */; };
+		CB7FC9232A1DC5840010B8AA /* Overpass-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB7FC9222A1DC5840010B8AA /* Overpass-SemiBold.ttf */; };
+		CB7FC9252A1DC5940010B8AA /* Overpass-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB7FC9242A1DC5940010B8AA /* Overpass-Light.ttf */; };
 		CB86A80F29CD337500C1123C /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86A80E29CD337500C1123C /* ProductDetailViewModel.swift */; };
 		CB86A81129CD492400C1123C /* DataRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86A81029CD492400C1123C /* DataRespository.swift */; };
 		CB86A81429CD496400C1123C /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86A81329CD496400C1123C /* Storable.swift */; };
@@ -45,6 +50,7 @@
 		CB8BD1C429CCD01500F4C4D0 /* Product.json in Resources */ = {isa = PBXBuildFile; fileRef = CB8BD1C329CCD01500F4C4D0 /* Product.json */; };
 		CB8BD1C629CCFDC700F4C4D0 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8BD1C529CCFDC700F4C4D0 /* NavigationRouter.swift */; };
 		CB8BD1C829CCFF1700F4C4D0 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8BD1C729CCFF1700F4C4D0 /* ProductDetailView.swift */; };
+		CB8F11CD2A19317E00BD2495 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8F11CC2A19317E00BD2495 /* Operations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,12 @@
 		CB0E878D29D2AE93006089AD /* Color+Huf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Huf.swift"; sourceTree = "<group>"; };
 		CB0E878F29D2B73C006089AD /* SubcategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryViewModel.swift; sourceTree = "<group>"; };
 		CB0E879129D3F51B006089AD /* Subcategory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Subcategory.json; sourceTree = "<group>"; };
+		CB7FC91B2A1DBE550010B8AA /* Overpass-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overpass-Bold.ttf"; sourceTree = "<group>"; };
+		CB7FC91D2A1DBE9C0010B8AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB7FC91E2A1DBF3B0010B8AA /* Font+Huf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Huf.swift"; sourceTree = "<group>"; };
+		CB7FC9202A1DC5770010B8AA /* Overpass-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overpass-Regular.ttf"; sourceTree = "<group>"; };
+		CB7FC9222A1DC5840010B8AA /* Overpass-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overpass-SemiBold.ttf"; sourceTree = "<group>"; };
+		CB7FC9242A1DC5940010B8AA /* Overpass-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overpass-Light.ttf"; sourceTree = "<group>"; };
 		CB86A80E29CD337500C1123C /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		CB86A81029CD492400C1123C /* DataRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRespository.swift; sourceTree = "<group>"; };
 		CB86A81329CD496400C1123C /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
@@ -107,6 +119,7 @@
 		CB8BD1C329CCD01500F4C4D0 /* Product.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Product.json; sourceTree = "<group>"; };
 		CB8BD1C529CCFDC700F4C4D0 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		CB8BD1C729CCFF1700F4C4D0 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		CB8F11CC2A19317E00BD2495 /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +178,7 @@
 		CB8BD17529CBA5FE00F4C4D0 /* HUF */ = {
 			isa = PBXGroup;
 			children = (
+				CB7FC91D2A1DBE9C0010B8AA /* Info.plist */,
 				CB8BD17629CBA5FE00F4C4D0 /* HUFApp.swift */,
 				CB8BD1A129CBA69400F4C4D0 /* Business Logic */,
 				CB8BD1A729CBA75700F4C4D0 /* Models */,
@@ -283,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				CB0E878D29D2AE93006089AD /* Color+Huf.swift */,
+				CB7FC91E2A1DBF3B0010B8AA /* Font+Huf.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +306,10 @@
 			isa = PBXGroup;
 			children = (
 				CB8BD17A29CBA5FF00F4C4D0 /* Assets.xcassets */,
+				CB7FC91B2A1DBE550010B8AA /* Overpass-Bold.ttf */,
+				CB7FC9202A1DC5770010B8AA /* Overpass-Regular.ttf */,
+				CB7FC9222A1DC5840010B8AA /* Overpass-SemiBold.ttf */,
+				CB7FC9242A1DC5940010B8AA /* Overpass-Light.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -313,6 +332,7 @@
 				CB86A80E29CD337500C1123C /* ProductDetailViewModel.swift */,
 				CB86A81929CE92FA00C1123C /* CartViewModel.swift */,
 				CB0E878F29D2B73C006089AD /* SubcategoryViewModel.swift */,
+				CB8F11CC2A19317E00BD2495 /* Operations.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -430,9 +450,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7FC9212A1DC5770010B8AA /* Overpass-Regular.ttf in Resources */,
 				CB0E879229D3F51B006089AD /* Subcategory.json in Resources */,
 				CB8BD1C429CCD01500F4C4D0 /* Product.json in Resources */,
+				CB7FC91C2A1DBE550010B8AA /* Overpass-Bold.ttf in Resources */,
 				CB8BD17F29CBA5FF00F4C4D0 /* Preview Assets.xcassets in Resources */,
+				CB7FC9232A1DC5840010B8AA /* Overpass-SemiBold.ttf in Resources */,
+				CB7FC9252A1DC5940010B8AA /* Overpass-Light.ttf in Resources */,
 				CB8BD17B29CBA5FF00F4C4D0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,11 +497,13 @@
 				CB8BD17929CBA5FE00F4C4D0 /* ProductListView.swift in Sources */,
 				CB8BD1BB29CBD71000F4C4D0 /* MockDataService.swift in Sources */,
 				CB86A80F29CD337500C1123C /* ProductDetailViewModel.swift in Sources */,
+				CB8F11CD2A19317E00BD2495 /* Operations.swift in Sources */,
 				CB86A81A29CE92FA00C1123C /* CartViewModel.swift in Sources */,
 				CB86A81429CD496400C1123C /* Storable.swift in Sources */,
 				CB86A81829CE925000C1123C /* BagView.swift in Sources */,
 				CB0E878429D252BC006089AD /* HomeView.swift in Sources */,
 				CB8BD1C229CCB6E200F4C4D0 /* DefaultInteractor.swift in Sources */,
+				CB7FC91F2A1DBF3B0010B8AA /* Font+Huf.swift in Sources */,
 				CB8BD1C629CCFDC700F4C4D0 /* NavigationRouter.swift in Sources */,
 				CB8BD1BE29CBDC5400F4C4D0 /* DisposableBag.swift in Sources */,
 				CB8BD17729CBA5FE00F4C4D0 /* HUFApp.swift in Sources */,
@@ -646,6 +672,7 @@
 				DEVELOPMENT_TEAM = 2H74473MY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HUF/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -684,6 +711,7 @@
 				DEVELOPMENT_TEAM = 2H74473MY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HUF/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

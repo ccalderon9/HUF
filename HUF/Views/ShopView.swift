@@ -11,11 +11,9 @@ struct ShopView: View {
     
     @EnvironmentObject var navigationRouter: NavigationRouter
     
+    @State private var searchText = ""
+    
     @StateObject var viewModel: ShopFlowViewModel = ShopFlowViewModel()
-    
-    let subcategories: [String] = ["T-Shirts", "Hoodies & Fleece", "Tops", "Bottoms", "Jackets", "Hats", "Socks", "All Clothing"]
-    
-    let colors: [Color] = [Color.green, Color.brown, Color.yellow, Color.orange, Color.red, Color.blue, Color.purple, Color.pink, Color.teal, Color.mint, Color.indigo, Color.gray]
     
     let columns = [
         GridItem(.flexible(), spacing: 4),
@@ -33,7 +31,8 @@ struct ShopView: View {
                             } label: {
                                 Text(category.name)
                                     .foregroundColor(.black)
-                                    .fontWeight(category.id == viewModel.selectedCategoryId ? .bold : .regular)
+                                    .font(.custom(Font.overpassBold, size: 20))
+                                    .kerning(-1)
                                     .underline(category.id == viewModel.selectedCategoryId) // not an underline but a segmented control
                                     .padding(.trailing, 20)
                                     .padding(.vertical, 8)
@@ -45,17 +44,25 @@ struct ShopView: View {
                 
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 4) {
-                        let colorsAndSubcategory = zip(colors, viewModel.categories.first(where: { $0.id == viewModel.selectedCategoryId })?.subcategories ?? []).map { ($0, $1) }
-                        ForEach(colorsAndSubcategory, id: \.0.description) { colorsAndSubcategory in
+                        let subcategories =  viewModel.categories.first(where: { $0.id == viewModel.selectedCategoryId })?.subcategories
+                        
+                        ForEach(subcategories ?? [], id: \.id) { subcategory in
                             Button {
-                                navigationRouter.navigateToSubcategory(colorsAndSubcategory.1.id)
+                                navigationRouter.navigateToSubcategory(subcategory.id)
                             } label: {
                                 ZStack {
-                                    Rectangle()
-                                        .fill(colorsAndSubcategory.0)
+                                    Image("\(subcategory.image)")
+                                        .resizable()
                                         .frame(width: calculateDimensions(), height: calculateDimensions())
+                                        .saturation(0.0)
                                     
-                                    Text(colorsAndSubcategory.1.name)
+                                    Rectangle()
+                                        .fill(Color.logoGreen.opacity(0.5))
+                                        .frame(width: calculateDimensions() - 80, height: calculateDimensions() - 80)
+                                    
+                                    Text(subcategory.name)
+                                        .font(.custom(Font.overpassBold, size: 28))
+                                        .kerning(-1)
                                         .font(.title)
                                         .foregroundColor(.white)
                                 }
@@ -73,6 +80,7 @@ struct ShopView: View {
                 }
             }
         }
+        .searchable(text: $searchText)
     }
     
     private func calculateDimensions() -> CGFloat {
@@ -83,6 +91,6 @@ struct ShopView: View {
 
 struct ShopView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopView()
+        ShopView().environmentObject(NavigationRouter())
     }
 }
